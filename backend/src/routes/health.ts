@@ -17,6 +17,6 @@ export function createHealthRouter(
   })
 
   return router
-})
+}
 
 export const healthRouter = createHealthRouter(checkDatabaseConnection)

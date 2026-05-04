@@ -26,6 +26,7 @@ export function createApp(dependencies: AppDependencies = {}) {
   app.use('/api/bookings', bookingsRouter)
 
   app.use((error: unknown, _request: express.Request, response: express.Response, _next: express.NextFunction) => {
+    void _next
     console.error('Unhandled API error:', error)
     response.status(500).json({ message: 'Internal server error.' })
   })
