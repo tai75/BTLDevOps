@@ -1,0 +1,20 @@
+{
+  "services": [
+    {
+      "name": "backend",
+      "source": "./backend",
+      "builder": "dockerfile"
+    },
+    {
+      "name": "frontend", 
+      "source": "./frontend",
+      "builder": "dockerfile"
+    }
+  ],
+  "databases": [
+    {
+      "name": "mysql",
+      "service": "mysql"
+    }
+  ]
+}
