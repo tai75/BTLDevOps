@@ -1,4 +1,10 @@
 import { useEffect, useState } from 'react'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import NavBar from './components/NavBar'
+import Home from './pages/Home'
+import Booking from './pages/Booking'
+import About from './pages/About'
+import Contact from './pages/Contact'
 import './App.css'
 
 type ServicePackage = {
@@ -128,123 +134,17 @@ function App() {
   }
 
   return (
-    <main className="page-shell">
-      <section className="hero-panel">
-        <div>
-          <p className="eyebrow">House Cleaning Booking</p>
-          <h1>Đặt lịch dọn nhà đơn giản, rõ ràng, không cần đăng nhập.</h1>
-          <p className="hero-copy">
-            Hệ thống tối giản cho đồ án DevOps: có frontend, backend API,
-            MySQL, Docker và CI/CD.
-          </p>
-          <div className="status-row">
-            <span className="status-pill">{healthStatus}</span>
-            <span className="status-pill muted">
-              {isLoading ? 'Đang tải dịch vụ...' : `${services.length} gói dịch vụ`}
-            </span>
-          </div>
-        </div>
-
-        <div className="info-card">
-          <h2>Luồng hoạt động</h2>
-          <ol>
-            <li>Frontend gọi API `/api/health` để kiểm tra backend.</li>
-            <li>Frontend lấy danh sách gói dọn nhà từ database.</li>
-            <li>Người dùng gửi form để tạo booking mới.</li>
-          </ol>
-        </div>
-      </section>
-
-      <section className="content-grid">
-        <div className="services-panel">
-          <div className="section-head">
-            <p className="eyebrow">Gói dịch vụ</p>
-            <h2>Có thể mở rộng sau nhưng hiện tại giữ thật đơn giản</h2>
-          </div>
-
-          <div className="service-list">
-            {services.map((service) => (
-              <article key={service.id} className="service-card">
-                <div>
-                  <h3>{service.package_name}</h3>
-                  <p>{service.description ?? 'Không có mô tả.'}</p>
-                </div>
-                <div className="service-meta">
-                  <span>{service.duration_minutes} phút</span>
-                  <strong>{Number(service.base_price).toLocaleString('vi-VN')} đ</strong>
-                </div>
-              </article>
-            ))}
-          </div>
-        </div>
-
-        <form className="booking-panel" onSubmit={handleSubmit}>
-          <div className="section-head">
-            <p className="eyebrow">Form đặt lịch</p>
-            <h2>Ghi nhận lịch dọn nhà</h2>
-          </div>
-
-          <label>
-            Họ và tên
-            <input name="fullName" value={form.fullName} onChange={handleChange} required />
-          </label>
-
-          <div className="field-row">
-            <label>
-              Số điện thoại
-              <input name="phone" value={form.phone} onChange={handleChange} required />
-            </label>
-
-            <label>
-              Email
-              <input name="email" type="email" value={form.email} onChange={handleChange} />
-            </label>
-          </div>
-
-          <label>
-            Chọn gói dịch vụ
-            <select name="servicePackageId" value={form.servicePackageId} onChange={handleChange} required>
-              <option value="">-- Chọn một gói --</option>
-              {services.map((service) => (
-                <option key={service.id} value={service.id}>
-                  {service.package_name}
-                </option>
-              ))}
-            </select>
-          </label>
-
-          <label>
-            Địa chỉ dọn nhà
-            <input name="serviceAddress" value={form.serviceAddress} onChange={handleChange} required />
-          </label>
-
-          <div className="field-row">
-            <label>
-              Ngày mong muốn
-              <input name="preferredDate" type="date" value={form.preferredDate} onChange={handleChange} required />
-            </label>
-
-            <label>
-              Giờ mong muốn
-              <input name="preferredTime" type="time" value={form.preferredTime} onChange={handleChange} required />
-            </label>
-          </div>
-
-          <label>
-            Số phòng
-            <input name="numberOfRooms" type="number" min="1" value={form.numberOfRooms} onChange={handleChange} />
-          </label>
-
-          <label>
-            Ghi chú
-            <textarea name="notes" rows={4} value={form.notes} onChange={handleChange} />
-          </label>
-
-          <button type="submit">Gửi yêu cầu đặt lịch</button>
-          {message ? <p className="feedback">{message}</p> : null}
-        </form>
-      </section>
-    </main>
+    <BrowserRouter>
+      <NavBar />
+      <main className="page-shell">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/booking" element={<Booking />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+      </main>
+    </BrowserRouter>
   )
 }
 

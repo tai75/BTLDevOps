@@ -7,8 +7,6 @@ services:
       MYSQL_DATABASE: house_cleaning_booking
       MYSQL_USER: housecleaner
       MYSQL_PASSWORD: housecleaner123
-    ports:
-      - '3306:3306'
     volumes:
       - mysql_data:/var/lib/mysql
       - ./mysql-schema.sql:/docker-entrypoint-initdb.d/01-schema.sql:ro
