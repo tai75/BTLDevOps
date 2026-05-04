@@ -2,8 +2,7 @@
   "services": [
     {
       "name": "backend",
-      "source": "./backend",
-      "builder": "dockerfile"
+      "source": "./backend"
     },
     {
       "name": "frontend", 
