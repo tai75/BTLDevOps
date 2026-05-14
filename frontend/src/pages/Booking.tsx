@@ -109,10 +109,8 @@ export default function Booking() {
         </div>
 
         <div className="highlight-band" style={{ marginTop: '18px' }}>
-          <strong>Lưu ý khi deploy</strong>
-          <span>
-            Form này sẽ dùng biến môi trường <code>VITE_API_URL</code> để gọi backend đã deploy riêng.
-          </span>
+          <strong>Cam kết bảo mật</strong>
+          <span>Thông tin khách hàng được bảo mật và chỉ dùng để liên hệ xác nhận lịch.</span>
         </div>
       </aside>
 

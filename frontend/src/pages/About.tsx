@@ -3,37 +3,38 @@ export default function About() {
     <section className="about-grid">
       <div className="page-card">
         <p className="eyebrow">Giới thiệu</p>
-        <h2>Ứng dụng demo đặt lịch dọn nhà phục vụ đồ án DevOps.</h2>
+        <h2>Dịch vụ dọn nhà chuyên nghiệp, tận tâm với khách hàng</h2>
         <p>
-          Dự án này không chỉ là một bài làm kỹ thuật, mà còn là một mô hình nhỏ cho cách tách frontend,
-          backend, database và deploy thành các phần có thể quản lý rõ ràng.
+          Chúng tôi cung cấp dịch vụ dọn nhà trọn gói cho các hộ gia đình và văn phòng. Đội ngũ được đào tạo
+          chuyên nghiệp, sử dụng hóa chất an toàn và thiết bị hiện đại để đảm bảo không gian sạch sẽ và
+          an toàn cho gia đình bạn.
         </p>
 
         <p className="decor-quote">
-          Mục tiêu của frontend là tạo ra trải nghiệm đủ đẹp để thuyết trình, nhưng vẫn đơn giản để bạn
-          bảo trì và sửa khi cần.
+          Sứ mệnh của chúng tôi là mang đến không gian sống sạch, giúp bạn tiết kiệm thời gian và tận hưởng
+          cuộc sống tiện nghi hơn.
         </p>
       </div>
 
       <div className="page-card">
-        <p className="eyebrow">Điểm nhấn</p>
-        <h2>Những thứ giao diện đang thể hiện.</h2>
+        <p className="eyebrow">Dịch vụ</p>
+        <h2>Gói dịch vụ linh hoạt, giá minh bạch</h2>
         <div className="benefit-list">
           <div className="benefit-item">
-            <strong>Trình bày tốt hơn</strong>
-            <span>Tạo ấn tượng rõ ràng khi demo trước lớp hoặc báo cáo.</span>
+            <strong>Dọn thường</strong>
+            <span>Dọn vệ sinh định kỳ, lau chùi, hút bụi, sắp xếp đồ đạc.</span>
           </div>
           <div className="benefit-item">
-            <strong>Dễ mở rộng</strong>
-            <span>Bạn vẫn có thể thêm trang dịch vụ, blog, hoặc dashboard sau này.</span>
+            <strong>Dọn sâu</strong>
+            <span>Dọn kỹ từng ngóc ngách, làm sạch cửa sổ, đáy tủ, khu vực bếp.</span>
           </div>
           <div className="benefit-item">
-            <strong>Phù hợp Vercel</strong>
-            <span>SPA + rewrite fallback giúp deploy và refresh route ổn định.</span>
+            <strong>Chuyển nhà</strong>
+            <span>Dọn sạch trước và sau khi chuyển nhà, giao nhận trả lại không gian mới sạch sẽ.</span>
           </div>
           <div className="benefit-item">
-            <strong>Khớp đồ án</strong>
-            <span>Thể hiện được frontend, API, Docker và CI/CD trong một project thống nhất.</span>
+            <strong>Đặt theo giờ</strong>
+            <span>Đặt linh hoạt theo khung giờ phù hợp với bạn.</span>
           </div>
         </div>
       </div>

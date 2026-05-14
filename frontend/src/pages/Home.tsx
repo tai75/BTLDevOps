@@ -5,34 +5,34 @@ export default function Home() {
     <>
       <section className="hero-panel">
         <div className="hero-card">
-          <p className="eyebrow">House Cleaning Booking System</p>
-          <h1>Trải nghiệm đặt lịch dọn nhà rõ ràng hơn, đẹp hơn, chuyên nghiệp hơn.</h1>
+          <p className="eyebrow">Dịch vụ dọn nhà chuyên nghiệp</p>
+          <h1>Không gian sạch sẽ, cuộc sống tiện nghi. Đặt lịch dọn nhà chỉ trong 30 giây</h1>
           <p className="hero-copy">
-            Đây là giao diện demo cho đồ án DevOps, nhưng vẫn được thiết kế như một sản phẩm thật: có
-            phân cấp nội dung, các khối thông tin rõ ràng và luồng đặt lịch mạch lạc.
+            Dịch vụ dọn nhà trọn gói, an toàn và tiện lợi cho mọi gia đình. Chúng tôi cam kết chất lượng,
+            đúng hẹn và giá cả minh bạch.
           </p>
 
           <div className="hero-actions">
             <Link className="button" to="/booking">
               Đặt lịch ngay
             </Link>
-            <Link className="button-secondary" to="/about">
-              Tìm hiểu thêm
+            <Link className="button-secondary" to="/contact">
+              Liên hệ hỗ trợ
             </Link>
           </div>
 
           <div className="status-row">
             <div className="status-pill">
-              <strong>Frontend SPA</strong>
-              <span>React Router, Vercel-ready</span>
+              <strong>Nhân viên uy tín</strong>
+              <span>Đội ngũ được đào tạo bài bản, lý lịch rõ ràng.</span>
             </div>
             <div className="status-pill">
-              <strong>Backend API</strong>
-              <span>Kết nối động qua VITE_API_URL</span>
+              <strong>Giá cả minh bạch</strong>
+              <span>Chi phí hiển thị ngay khi đặt, không phát sinh.</span>
             </div>
             <div className="status-pill muted">
-              <strong>DevOps Demo</strong>
-              <span>Docker, CI/CD, database</span>
+              <strong>Phục vụ nhanh chóng</strong>
+              <span>Có mặt sau 60 phút đặt lịch.</span>
             </div>
           </div>
         </div>
