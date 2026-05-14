@@ -39,83 +39,82 @@ export default function Home() {
 
         <aside className="hero-sidebar">
           <div className="info-card">
-            <p className="eyebrow">Điểm mạnh</p>
-            <h2>Giao diện có cấu trúc</h2>
-            <div className="feature-list">
-              <div className="feature-item">
-                <strong>Hero rõ mục tiêu</strong>
-                <span>Ngay lập tức biết website làm gì và phải bấm vào đâu.</span>
+            <p className="eyebrow">Dịch vụ phổ biến</p>
+            <h2>Khách hàng thường đặt nhất</h2>
+            <div className="service-list compact">
+              <div className="service-card">
+                <div>
+                  <h3>Dọn dẹp định kỳ</h3>
+                  <p>Quét dọn, lau chùi cơ bản hàng tuần.</p>
+                </div>
               </div>
-              <div className="feature-item">
-                <strong>CTA nổi bật</strong>
-                <span>Đặt lịch và xem thêm thông tin đều có đường đi rõ ràng.</span>
+              <div className="service-card">
+                <div>
+                  <h3>Tổng vệ sinh</h3>
+                  <p>Vệ sinh sâu, làm sạch toàn diện nhà mới/cũ.</p>
+                </div>
               </div>
-              <div className="feature-item">
-                <strong>Thiết kế thống nhất</strong>
-                <span>Màu sắc, bo góc và bóng đổ được dùng đồng bộ giữa các trang.</span>
-              </div>
-              <div className="feature-item">
-                <strong>Tương thích mobile</strong>
-                <span>Layout tự co giãn để nhìn ổn trên màn hình nhỏ.</span>
+              <div className="service-card">
+                <div>
+                  <h3>Vệ sinh máy lạnh</h3>
+                  <p>Bảo trì và làm sạch lưới lọc chuyên nghiệp.</p>
+                </div>
               </div>
             </div>
-          </div>
-
-          <div className="highlight-band">
-            <strong>Gợi ý cho đồ án</strong>
-            <span>
-              Nếu bạn cần trình bày, trang này có thể dùng làm landing page chính, còn các route khác giữ
-              vai trò trang phụ.
-            </span>
           </div>
         </aside>
       </section>
 
       <section className="content-grid">
         <div className="page-card">
-          <p className="eyebrow">Luồng sử dụng</p>
-          <h2>Người dùng đi từ xem dịch vụ đến đặt lịch trong vài bước.</h2>
-          <ol className="benefit-list">
-            <li className="benefit-item">
-              <strong>1. Xem trang chủ</strong>
-              <span>Hiểu ngay dịch vụ, quy mô dự án và lý do sản phẩm tồn tại.</span>
-            </li>
-            <li className="benefit-item">
-              <strong>2. Chọn gói dịch vụ</strong>
-              <span>Những gói cần thiết được đưa vào form đặt lịch.</span>
-            </li>
-            <li className="benefit-item">
-              <strong>3. Gửi form</strong>
-              <span>Frontend gọi API backend để tạo booking thật.</span>
-            </li>
-            <li className="benefit-item">
-              <strong>4. Xác nhận</strong>
-              <span>Người dùng nhận phản hồi thành công hoặc lỗi ngay trên giao diện.</span>
-            </li>
-          </ol>
+          <p className="eyebrow">Phản hồi từ khách hàng</p>
+          <h2>Những trải nghiệm tích cực từ người đã sử dụng dịch vụ</h2>
+          <div className="testimonial-list">
+            <div className="testimonial-item">
+              <strong>Ngọc Anh, Quận 3</strong>
+              <span>
+                “Nhân viên đến đúng giờ, làm sạch kỹ và rất lịch sự. Nhà mình nhìn gọn gàng hẳn sau buổi
+                dọn.”
+              </span>
+            </div>
+            <div className="testimonial-item">
+              <strong>Anh Minh, Thủ Đức</strong>
+              <span>
+                “Giá báo rõ ràng, không có phí phát sinh. Mình đặt gói tổng vệ sinh và rất hài lòng với kết
+                quả.”
+              </span>
+            </div>
+            <div className="testimonial-item">
+              <strong>Chị Hương, Bình Thạnh</strong>
+              <span>
+                “Dịch vụ nhanh, gọn và chuyên nghiệp. Đặt lịch buổi sáng thì chiều đã có người tới hỗ trợ
+                rất tiện.”
+              </span>
+            </div>
+          </div>
         </div>
 
         <div className="page-card">
-          <p className="eyebrow">Tóm tắt dự án</p>
-          <h2>Thiết kế hiện tại phù hợp để demo lẫn deploy.</h2>
-          <div className="stat-grid">
-            <div className="metric-card">
-              <strong>4</strong>
-              <span>route chính</span>
+          <p className="eyebrow">Cam kết dịch vụ</p>
+          <h2>Luôn hướng đến sự hài lòng của khách hàng</h2>
+          <div className="benefit-list">
+            <div className="benefit-item">
+              <strong>Sạch sẽ kỹ lưỡng</strong>
+              <span>Chăm chút từng khu vực để đảm bảo không gian sống dễ chịu hơn.</span>
             </div>
-            <div className="metric-card">
-              <strong>1</strong>
-              <span>luồng đặt lịch</span>
+            <div className="benefit-item">
+              <strong>Đúng lịch hẹn</strong>
+              <span>Làm việc đúng thời gian khách hàng mong muốn, không chậm trễ.</span>
             </div>
-            <div className="metric-card">
-              <strong>2</strong>
-              <span>môi trường deploy</span>
+            <div className="benefit-item">
+              <strong>Tư vấn tận tâm</strong>
+              <span>Luôn sẵn sàng tư vấn gói dịch vụ phù hợp theo nhu cầu thực tế.</span>
+            </div>
+            <div className="benefit-item">
+              <strong>Hỗ trợ nhanh</strong>
+              <span>Phản hồi sớm để khách hàng dễ dàng đặt lịch và chủ động sắp xếp.</span>
             </div>
           </div>
-          <p className="decor-quote">
-            Một landing page tốt cho đồ án không cần quá nhiều hiệu ứng. Cái cần nhất là trật tự, điểm nhấn
-            và cảm giác có chủ đích.
-          </p>
         </div>
       </section>
     </>

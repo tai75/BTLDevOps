@@ -37,7 +37,8 @@
   border-radius: 999px;
   text-decoration: none;
   color: #4a3a29;
-  font-weight: 700;
+  font-weight: 500;
+  font-size: 0.94rem;
   transition: transform 180ms ease, background-color 180ms ease, color 180ms ease, box-shadow 180ms ease;
 }
 
@@ -126,6 +127,7 @@ h3 {
   margin-top: 18px;
   font-size: 1.06rem;
   color: #53493d;
+  line-height: 1.6;
 }
 
 .hero-actions,
@@ -144,6 +146,9 @@ h3 {
   padding: 13px 18px;
   border-radius: 999px;
   font-weight: 800;
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
   text-decoration: none;
   transition: transform 180ms ease, box-shadow 180ms ease, background-color 180ms ease;
 }
@@ -228,7 +233,7 @@ h3 {
 .booking-panel,
 .page-card,
 .contact-card {
-  padding: 24px;
+  padding: 26px;
 }
 
 .page-card {
@@ -265,6 +270,7 @@ h3 {
 .contact-card p,
 .info-card p {
   color: #5d554b;
+  line-height: 1.58;
 }
 
 .feature-list,
@@ -319,6 +325,39 @@ h3 {
   margin-bottom: 8px;
 }
 
+.contact-stack {
+  display: grid;
+  gap: 24px;
+}
+
+.map-card {
+  margin: 0;
+  display: grid;
+  gap: 12px;
+}
+
+.map-image {
+  width: 100%;
+  display: block;
+  border-radius: 22px;
+  border: 1px solid rgba(172, 122, 62, 0.14);
+  box-shadow: 0 14px 28px rgba(53, 31, 11, 0.08);
+}
+
+.map-card figcaption {
+  color: #64584a;
+  line-height: 1.55;
+}
+
+.quick-message-form {
+  display: grid;
+  gap: 14px;
+}
+
+.quick-message-form button {
+  margin-top: 4px;
+}
+
 .highlight-band {
   display: grid;
   gap: 12px;
@@ -336,6 +375,10 @@ h3 {
   gap: 14px;
 }
 
+.service-list.compact {
+  gap: 12px;
+}
+
 .service-card {
   display: flex;
   justify-content: space-between;
@@ -349,6 +392,29 @@ h3 {
 .service-card h3 {
   margin: 0 0 8px;
   font-size: 1.08rem;
+}
+
+.testimonial-list {
+  display: grid;
+  gap: 14px;
+}
+
+.testimonial-item {
+  padding: 18px;
+  border-radius: 20px;
+  background: linear-gradient(180deg, #fffaf3 0%, #fff7eb 100%);
+  border: 1px solid rgba(172, 122, 62, 0.14);
+  display: grid;
+  gap: 8px;
+}
+
+.testimonial-item strong {
+  color: #1f1307;
+}
+
+.testimonial-item span {
+  color: #64584a;
+  line-height: 1.6;
 }
 
 .service-meta {

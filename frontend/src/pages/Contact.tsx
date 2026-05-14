@@ -3,7 +3,7 @@ export default function Contact() {
     <section className="contact-grid">
       <div className="page-card">
         <p className="eyebrow">Liên hệ</p>
-        <h2>Thông tin liên hệ và hỗ trợ.</h2>
+        <h2>Văn phòng hỗ trợ khách hàng BTL Clean</h2>
         <div className="contact-list">
           <div className="contact-item">
             <strong>Điện thoại</strong>
@@ -17,22 +17,45 @@ export default function Contact() {
             <strong>Giờ làm việc</strong>
             <span>08:00 - 18:00, Thứ 2 đến Thứ 7</span>
           </div>
+          <div className="contact-item">
+            <strong>Địa chỉ</strong>
+            <span>123 Nguyễn Huệ, Quận 1, TP. Hồ Chí Minh</span>
+          </div>
         </div>
       </div>
 
-      <div className="page-card">
-        <p className="eyebrow">Mục tiêu giao diện</p>
-        <h2>Ngắn gọn, rõ ràng và dễ chốt hành động.</h2>
-        <p>
-          Trang liên hệ không cần quá nhiều yếu tố. Nó chỉ cần giúp người dùng hiểu phải gọi ai, khi nào và
-          có kênh nào khác nếu muốn đặt lịch nhanh.
-        </p>
+      <div className="contact-stack">
+        <div className="page-card">
+          <p className="eyebrow">Bản đồ văn phòng</p>
+          <h2>Vị trí hỗ trợ khách hàng</h2>
+          <figure className="map-card">
+            <img
+              className="map-image"
+              src="https://placehold.co/900x520/png?text=Google+Maps+Placeholder+%E2%80%93+BTL+Clean+Office"
+              alt="Bản đồ Google Maps placeholder của văn phòng công ty"
+            />
+            <figcaption>Văn phòng tiếp nhận và hỗ trợ khách hàng của BTL Clean.</figcaption>
+          </figure>
+        </div>
 
-        <div className="highlight-band">
-          <strong>Gợi ý cho báo cáo</strong>
-          <span>
-            Bạn có thể nói giao diện này ưu tiên luồng người dùng, thay vì chỉ làm đẹp bề mặt.
-          </span>
+        <div className="page-card">
+          <p className="eyebrow">Gửi lời nhắn nhanh</p>
+          <h2>Nhận phản hồi trong thời gian sớm nhất</h2>
+          <form className="quick-message-form">
+            <label>
+              Họ tên
+              <input type="text" name="name" placeholder="Nhập họ tên của bạn" />
+            </label>
+            <label>
+              Email
+              <input type="email" name="email" placeholder="Nhập email liên hệ" />
+            </label>
+            <label>
+              Nội dung tin nhắn
+              <textarea name="message" rows={5} placeholder="Bạn cần tư vấn dịch vụ nào?" />
+            </label>
+            <button type="button">Gửi lời nhắn</button>
+          </form>
         </div>
       </div>
     </section>

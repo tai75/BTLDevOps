@@ -9,12 +9,7 @@ export default function NavBar() {
       <ul>
         <li>
           <Link className={isActive('/')} to="/">
-            Dịch vụ Dọn Nhà
-          </Link>
-        </li>
-        <li>
-          <Link className={isActive('/')} to="/">
-            Trang chủ
+            BTL Clean
           </Link>
         </li>
         <li>
