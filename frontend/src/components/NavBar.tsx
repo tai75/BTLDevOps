@@ -9,6 +9,11 @@ export default function NavBar() {
       <ul>
         <li>
           <Link className={isActive('/')} to="/">
+            BTLDevOps
+          </Link>
+        </li>
+        <li>
+          <Link className={isActive('/')} to="/">
             Trang chủ
           </Link>
         </li>

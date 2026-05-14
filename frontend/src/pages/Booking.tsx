@@ -77,70 +77,110 @@ export default function Booking() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="booking-panel">
-      <div className="section-head">
-        <p className="eyebrow">Form đặt lịch</p>
-        <h2>Ghi nhận lịch dọn nhà</h2>
-      </div>
+    <section className="booking-layout">
+      <aside className="page-card">
+        <div className="section-head">
+          <p className="eyebrow">Form đặt lịch</p>
+          <h2>Ghi nhận lịch dọn nhà</h2>
+        </div>
 
-      <label>
-        Họ và tên
-        <input name="fullName" value={form.fullName} onChange={handleChange} required />
-      </label>
+        <p>
+          Trang này được thiết kế để người dùng điền thông tin nhanh, dễ đọc và có cảm giác rõ ràng khi
+          gửi form. Nếu backend sẵn sàng, đây là phần tương tác quan trọng nhất của giao diện.
+        </p>
 
-      <div className="field-row">
+        <div className="benefit-list">
+          <div className="benefit-item">
+            <strong>Rõ ràng</strong>
+            <span>Các trường nhập được nhóm theo logic để tránh cảm giác rối.</span>
+          </div>
+          <div className="benefit-item">
+            <strong>Thực dụng</strong>
+            <span>Form đúng với API hiện có, không thêm bước thừa.</span>
+          </div>
+          <div className="benefit-item">
+            <strong>Thuyết trình tốt</strong>
+            <span>Bạn có thể giải thích đây là UI có cấu trúc, không phải form demo đơn giản.</span>
+          </div>
+          <div className="benefit-item">
+            <strong>Responsive</strong>
+            <span>Layout tự co giãn, không vỡ trên máy tính bảng hay điện thoại.</span>
+          </div>
+        </div>
+
+        <div className="highlight-band" style={{ marginTop: '18px' }}>
+          <strong>Lưu ý khi deploy</strong>
+          <span>
+            Form này sẽ dùng biến môi trường <code>VITE_API_URL</code> để gọi backend đã deploy riêng.
+          </span>
+        </div>
+      </aside>
+
+      <form onSubmit={handleSubmit} className="booking-panel">
+        <div className="section-head">
+          <p className="eyebrow">Nhập thông tin</p>
+          <h2>Đặt lịch theo nhu cầu của bạn</h2>
+        </div>
+
         <label>
-          Số điện thoại
-          <input name="phone" value={form.phone} onChange={handleChange} required />
+          Họ và tên
+          <input name="fullName" value={form.fullName} onChange={handleChange} required />
+        </label>
+
+        <div className="field-row">
+          <label>
+            Số điện thoại
+            <input name="phone" value={form.phone} onChange={handleChange} required />
+          </label>
+
+          <label>
+            Email
+            <input name="email" type="email" value={form.email} onChange={handleChange} />
+          </label>
+        </div>
+
+        <label>
+          Chọn gói dịch vụ
+          <select name="servicePackageId" value={form.servicePackageId} onChange={handleChange} required>
+            <option value="">-- Chọn một gói --</option>
+            {services.map((s) => (
+              <option key={s.id} value={s.id}>
+                {s.package_name}
+              </option>
+            ))}
+          </select>
         </label>
 
         <label>
-          Email
-          <input name="email" type="email" value={form.email} onChange={handleChange} />
+          Địa chỉ dọn nhà
+          <input name="serviceAddress" value={form.serviceAddress} onChange={handleChange} required />
         </label>
-      </div>
 
-      <label>
-        Chọn gói dịch vụ
-        <select name="servicePackageId" value={form.servicePackageId} onChange={handleChange} required>
-          <option value="">-- Chọn một gói --</option>
-          {services.map((s) => (
-            <option key={s.id} value={s.id}>
-              {s.package_name}
-            </option>
-          ))}
-        </select>
-      </label>
+        <div className="field-row">
+          <label>
+            Ngày mong muốn
+            <input name="preferredDate" type="date" value={form.preferredDate} onChange={handleChange} required />
+          </label>
 
-      <label>
-        Địa chỉ dọn nhà
-        <input name="serviceAddress" value={form.serviceAddress} onChange={handleChange} required />
-      </label>
+          <label>
+            Giờ mong muốn
+            <input name="preferredTime" type="time" value={form.preferredTime} onChange={handleChange} required />
+          </label>
+        </div>
 
-      <div className="field-row">
         <label>
-          Ngày mong muốn
-          <input name="preferredDate" type="date" value={form.preferredDate} onChange={handleChange} required />
+          Số phòng
+          <input name="numberOfRooms" type="number" min="1" value={form.numberOfRooms} onChange={handleChange} />
         </label>
 
         <label>
-          Giờ mong muốn
-          <input name="preferredTime" type="time" value={form.preferredTime} onChange={handleChange} required />
+          Ghi chú
+          <textarea name="notes" rows={4} value={form.notes} onChange={handleChange} />
         </label>
-      </div>
 
-      <label>
-        Số phòng
-        <input name="numberOfRooms" type="number" min="1" value={form.numberOfRooms} onChange={handleChange} />
-      </label>
-
-      <label>
-        Ghi chú
-        <textarea name="notes" rows={4} value={form.notes} onChange={handleChange} />
-      </label>
-
-      <button type="submit">Gửi yêu cầu đặt lịch</button>
-      {message ? <p className="feedback">{message}</p> : null}
-    </form>
+        <button type="submit">Gửi yêu cầu đặt lịch</button>
+        {message ? <p className="feedback">{message}</p> : null}
+      </form>
+    </section>
   )
 }

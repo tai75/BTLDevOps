@@ -233,6 +233,17 @@ Railway makes deployment effortless with auto-scaling and managed services.
 
 **Detailed guide:** See [DEPLOYMENT.md](./DEPLOYMENT.md)
 
+### Vercel (Frontend Only)
+
+If you want to deploy only the React frontend to Vercel:
+
+1. Create a new Vercel project from this repository.
+2. Set the **Root Directory** to `frontend`.
+3. Keep the default Vite build settings.
+4. Add the frontend environment variable `VITE_API_URL` to point to your backend API.
+
+The file [frontend/vercel.json](frontend/vercel.json) keeps React Router working on refresh or direct navigation.
+
 ### Other Options
 
 - **Docker VPS**: Self-hosted with `docker-compose.prod.yml`
