@@ -339,6 +339,8 @@ h3 {
 .map-image {
   width: 100%;
   display: block;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
   border-radius: 22px;
   border: 1px solid rgba(172, 122, 62, 0.14);
   box-shadow: 0 14px 28px rgba(53, 31, 11, 0.08);
@@ -392,6 +394,13 @@ h3 {
 .service-card h3 {
   margin: 0 0 8px;
   font-size: 1.08rem;
+}
+
+.service-price {
+  color: #8a4b12;
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-top: 8px;
 }
 
 .testimonial-list {

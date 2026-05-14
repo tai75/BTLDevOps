@@ -44,20 +44,23 @@ export default function Home() {
             <div className="service-list compact">
               <div className="service-card">
                 <div>
-                  <h3>Dọn dẹp định kỳ</h3>
+                  <h3>Gói cơ bản</h3>
                   <p>Quét dọn, lau chùi cơ bản hàng tuần.</p>
+                  <strong className="service-price">200k/1 phòng</strong>
                 </div>
               </div>
               <div className="service-card">
                 <div>
-                  <h3>Tổng vệ sinh</h3>
+                  <h3>Gói tiêu chuẩn</h3>
                   <p>Vệ sinh sâu, làm sạch toàn diện nhà mới/cũ.</p>
+                  <strong className="service-price">400k/1 phòng</strong>
                 </div>
               </div>
               <div className="service-card">
                 <div>
                   <h3>Vệ sinh máy lạnh</h3>
                   <p>Bảo trì và làm sạch lưới lọc chuyên nghiệp.</p>
+                  <strong className="service-price">Liên hệ</strong>
                 </div>
               </div>
             </div>
