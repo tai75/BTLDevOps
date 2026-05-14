@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 
 type ServicePackage = {
   id: number
@@ -21,22 +21,12 @@ export default function Booking() {
     numberOfRooms: '1',
     notes: '',
   })
-  const [services, setServices] = useState<ServicePackage[]>([])
   const [message, setMessage] = useState('')
 
-  useEffect(() => {
-    async function load() {
-      if (!apiBaseUrl) return
-      try {
-        const r = await fetch(`${apiBaseUrl}/api/services`)
-        const j = await r.json()
-        setServices(j.data ?? [])
-      } catch {
-        // ignore
-      }
-    }
-    void load()
-  }, [apiBaseUrl])
+  const services: ServicePackage[] = [
+    { id: 1, package_name: 'Gói cơ bản - 200k/1 phòng', description: 'Quét dọn, lau chùi cơ bản', duration_minutes: 60, base_price: '200000' },
+    { id: 2, package_name: 'Gói tiêu chuẩn - 400k/1 phòng', description: 'Vệ sinh sâu, làm sạch toàn diện', duration_minutes: 120, base_price: '400000' },
+  ]
 
   function handleChange(e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) {
     const { name, value } = e.target

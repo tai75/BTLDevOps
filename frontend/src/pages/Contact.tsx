@@ -26,19 +26,6 @@ export default function Contact() {
 
       <div className="contact-stack">
         <div className="page-card">
-          <p className="eyebrow">Bản đồ văn phòng</p>
-          <h2>Vị trí hỗ trợ khách hàng</h2>
-          <figure className="map-card">
-            <img
-              className="map-image"
-              src="https://placehold.co/800x450/e8d5c4/8a4b12?text=Văn+phòng+BTL+Clean,+Đà+Nẵng"
-              alt="Bản đồ vị trí văn phòng BTL Clean tại Đà Nẵng"
-            />
-            <figcaption>Văn phòng tiếp nhận và hỗ trợ khách hàng của BTL Clean.</figcaption>
-          </figure>
-        </div>
-
-        <div className="page-card">
           <p className="eyebrow">Gửi lời nhắn nhanh</p>
           <h2>Nhận phản hồi trong thời gian sớm nhất</h2>
           <form className="quick-message-form">

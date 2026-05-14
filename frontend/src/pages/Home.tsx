@@ -56,13 +56,7 @@ export default function Home() {
                   <strong className="service-price">400k/1 phòng</strong>
                 </div>
               </div>
-              <div className="service-card">
-                <div>
-                  <h3>Vệ sinh máy lạnh</h3>
-                  <p>Bảo trì và làm sạch lưới lọc chuyên nghiệp.</p>
-                  <strong className="service-price">Liên hệ</strong>
-                </div>
-              </div>
+
             </div>
           </div>
         </aside>
@@ -74,21 +68,21 @@ export default function Home() {
           <h2>Những trải nghiệm tích cực từ người đã sử dụng dịch vụ</h2>
           <div className="testimonial-list">
             <div className="testimonial-item">
-              <strong>Ngọc Anh, Quận 3</strong>
+              <strong>Chị Linh, Quận Hải Châu</strong>
               <span>
                 “Nhân viên đến đúng giờ, làm sạch kỹ và rất lịch sự. Nhà mình nhìn gọn gàng hẳn sau buổi
                 dọn.”
               </span>
             </div>
             <div className="testimonial-item">
-              <strong>Anh Minh, Thủ Đức</strong>
+              <strong>Anh Dũng, Quận Cẩm Lệ</strong>
               <span>
                 “Giá báo rõ ràng, không có phí phát sinh. Mình đặt gói tổng vệ sinh và rất hài lòng với kết
                 quả.”
               </span>
             </div>
             <div className="testimonial-item">
-              <strong>Chị Hương, Bình Thạnh</strong>
+              <strong>Chị Mai, Quận Thanh Khê</strong>
               <span>
                 “Dịch vụ nhanh, gọn và chuyên nghiệp. Đặt lịch buổi sáng thì chiều đã có người tới hỗ trợ
                 rất tiện.”
