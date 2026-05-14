@@ -3,38 +3,33 @@ export default function About() {
     <section className="about-grid">
       <div className="page-card">
         <p className="eyebrow">Giới thiệu</p>
-        <h2>Dịch vụ dọn nhà chuyên nghiệp, tận tâm với khách hàng</h2>
+        <h2>Sứ mệnh của BTL Clean</h2>
         <p>
-          Chúng tôi cung cấp dịch vụ dọn nhà trọn gói cho các hộ gia đình và văn phòng. Đội ngũ được đào tạo
-          chuyên nghiệp, sử dụng hóa chất an toàn và thiết bị hiện đại để đảm bảo không gian sạch sẽ và
-          an toàn cho gia đình bạn.
+          Chuyên cung cấp giải pháp vệ sinh nhà ở thông minh, giúp khách hàng tiết kiệm thời gian và tận
+          hưởng không gian sống sạch sẽ, tiện nghi hơn mỗi ngày.
         </p>
 
         <p className="decor-quote">
-          Sứ mệnh của chúng tôi là mang đến không gian sống sạch, giúp bạn tiết kiệm thời gian và tận hưởng
-          cuộc sống tiện nghi hơn.
+          Chúng tôi tin rằng một ngôi nhà sạch sẽ không chỉ là nơi ở thoải mái, mà còn là nền tảng cho cuộc
+          sống khỏe mạnh và năng suất hơn.
         </p>
       </div>
 
       <div className="page-card">
-        <p className="eyebrow">Dịch vụ</p>
-        <h2>Gói dịch vụ linh hoạt, giá minh bạch</h2>
-        <div className="benefit-list">
-          <div className="benefit-item">
-            <strong>Dọn thường</strong>
-            <span>Dọn vệ sinh định kỳ, lau chùi, hút bụi, sắp xếp đồ đạc.</span>
+        <p className="eyebrow">Con số ấn tượng</p>
+        <h2>Niềm tin được xây dựng từ kết quả thực tế</h2>
+        <div className="stat-grid">
+          <div className="metric-card">
+            <strong>1000+</strong>
+            <span>Khách hàng tin dùng</span>
           </div>
-          <div className="benefit-item">
-            <strong>Dọn sâu</strong>
-            <span>Dọn kỹ từng ngóc ngách, làm sạch cửa sổ, đáy tủ, khu vực bếp.</span>
+          <div className="metric-card">
+            <strong>50+</strong>
+            <span>Nhân viên chuyên nghiệp</span>
           </div>
-          <div className="benefit-item">
-            <strong>Chuyển nhà</strong>
-            <span>Dọn sạch trước và sau khi chuyển nhà, giao nhận trả lại không gian mới sạch sẽ.</span>
-          </div>
-          <div className="benefit-item">
-            <strong>Đặt theo giờ</strong>
-            <span>Đặt linh hoạt theo khung giờ phù hợp với bạn.</span>
+          <div className="metric-card">
+            <strong>5+</strong>
+            <span>Năm kinh nghiệm trong ngành</span>
           </div>
         </div>
       </div>

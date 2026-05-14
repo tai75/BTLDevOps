@@ -278,6 +278,47 @@ h3 {
   gap: 6px;
 }
 
+.process-list {
+  display: grid;
+  gap: 12px;
+}
+
+.process-item {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 14px;
+  padding: 16px 18px;
+  border-radius: 20px;
+  background: rgba(255, 248, 236, 0.96);
+  border: 1px solid rgba(172, 122, 62, 0.12);
+}
+
+.process-item p {
+  margin: 4px 0 0;
+  color: #64584a;
+}
+
+.process-number {
+  width: 42px;
+  height: 42px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #8a4b12, #f59e0b);
+  color: #fff;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+
+.booking-panel .section-head p {
+  margin-bottom: 0;
+}
+
+.booking-panel .section-head h2 {
+  margin-bottom: 8px;
+}
+
 .highlight-band {
   display: grid;
   gap: 12px;

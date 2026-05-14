@@ -80,31 +80,43 @@ export default function Booking() {
     <section className="booking-layout">
       <aside className="page-card">
         <div className="section-head">
-          <p className="eyebrow">Form đặt lịch</p>
-          <h2>Ghi nhận lịch dọn nhà</h2>
+          <p className="eyebrow">Quy trình dịch vụ</p>
+          <h2>Hướng dẫn đặt lịch</h2>
         </div>
 
         <p>
-          Trang này được thiết kế để người dùng điền thông tin nhanh, dễ đọc và có cảm giác rõ ràng khi
-          gửi form. Nếu backend sẵn sàng, đây là phần tương tác quan trọng nhất của giao diện.
+          Chỉ với 4 bước đơn giản, bạn có thể đặt lịch dọn nhà nhanh chóng và chủ động chọn thời gian phù
+          hợp nhất cho gia đình mình.
         </p>
 
-        <div className="benefit-list">
-          <div className="benefit-item">
-            <strong>Rõ ràng</strong>
-            <span>Các trường nhập được nhóm theo logic để tránh cảm giác rối.</span>
+        <div className="process-list">
+          <div className="process-item">
+            <span className="process-number">01</span>
+            <div>
+              <strong>Điền thông tin</strong>
+              <p>Nhập họ tên, số điện thoại và địa chỉ để chúng tôi tiếp nhận yêu cầu.</p>
+            </div>
           </div>
-          <div className="benefit-item">
-            <strong>Thực dụng</strong>
-            <span>Form đúng với API hiện có, không thêm bước thừa.</span>
+          <div className="process-item">
+            <span className="process-number">02</span>
+            <div>
+              <strong>Chọn gói dịch vụ</strong>
+              <p>Lựa chọn gói dọn phù hợp theo nhu cầu và mức độ làm sạch mong muốn.</p>
+            </div>
           </div>
-          <div className="benefit-item">
-            <strong>Thuyết trình tốt</strong>
-            <span>Bạn có thể giải thích đây là UI có cấu trúc, không phải form demo đơn giản.</span>
+          <div className="process-item">
+            <span className="process-number">03</span>
+            <div>
+              <strong>Xác nhận thời gian</strong>
+              <p>Chọn ngày và giờ thuận tiện, đội ngũ sẽ liên hệ xác nhận ngay sau đó.</p>
+            </div>
           </div>
-          <div className="benefit-item">
-            <strong>Responsive</strong>
-            <span>Layout tự co giãn, không vỡ trên máy tính bảng hay điện thoại.</span>
+          <div className="process-item">
+            <span className="process-number">04</span>
+            <div>
+              <strong>Nhân viên đến làm việc</strong>
+              <p>Đội ngũ sẽ có mặt đúng hẹn để hoàn thành công việc một cách chuyên nghiệp.</p>
+            </div>
           </div>
         </div>
 
@@ -116,8 +128,9 @@ export default function Booking() {
 
       <form onSubmit={handleSubmit} className="booking-panel">
         <div className="section-head">
-          <p className="eyebrow">Nhập thông tin</p>
-          <h2>Đặt lịch theo nhu cầu của bạn</h2>
+          <p className="eyebrow">Thông tin đặt lịch</p>
+          <h2>Điền form để nhận báo giá nhanh</h2>
+          <p>Vui lòng điền đầy đủ thông tin để chúng tôi xác nhận và sắp xếp nhân viên phù hợp.</p>
         </div>
 
         <label>
