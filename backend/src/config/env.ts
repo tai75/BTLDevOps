@@ -30,9 +30,9 @@ export const env = {
   corsOrigin: readCorsOrigin(),
   db: {
     host: process.env.DB_HOST ?? 'localhost',
-    port: readNumber(process.env.DB_PORT, 3306),
-    user: process.env.DB_USER ?? 'root',
-    password: process.env.DB_PASSWORD ?? '',
+    port: readNumber(process.env.DB_PORT, 5432),
+    user: process.env.DB_USER ?? 'postgres',
+    password: process.env.DB_PASSWORD ?? 'postgres',
     database: process.env.DB_NAME ?? 'house_cleaning_booking',
   },
 }

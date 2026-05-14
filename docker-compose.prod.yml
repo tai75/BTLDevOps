@@ -1,25 +1,4 @@
 services:
-  mysql:
-    image: mysql:8.0
-    command: --default-authentication-plugin=mysql_native_password
-    environment:
-      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD:-rootpassword}
-      MYSQL_DATABASE: ${DB_NAME:-house_cleaning_booking}
-      MYSQL_USER: ${DB_USER:-housecleaner}
-      MYSQL_PASSWORD: ${DB_PASSWORD:-housecleaner123}
-    volumes:
-      - mysql_data:/var/lib/mysql
-      - ./mysql-schema.sql:/docker-entrypoint-initdb.d/01-schema.sql:ro
-    ports:
-      - '3306'
-    healthcheck:
-      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-p${DB_ROOT_PASSWORD:-rootpassword}"]
-      interval: 10s
-      timeout: 5s
-      retries: 10
-    networks:
-      - btldevops_net
-
   backend:
     build:
       context: ./backend
@@ -27,15 +6,12 @@ services:
     environment:
       PORT: ${PORT:-4000}
       CORS_ORIGIN: ${CORS_ORIGIN:-http://localhost:5173}
-      DB_HOST: ${DB_HOST:-mysql}
-      DB_PORT: ${DB_PORT:-3306}
-      DB_USER: ${DB_USER:-housecleaner}
-      DB_PASSWORD: ${DB_PASSWORD:-housecleaner123}
+      DB_HOST: ${DB_HOST:-localhost}
+      DB_PORT: ${DB_PORT:-5432}
+      DB_USER: ${DB_USER:-postgres}
+      DB_PASSWORD: ${DB_PASSWORD:-postgres}
       DB_NAME: ${DB_NAME:-house_cleaning_booking}
       NODE_ENV: production
-    depends_on:
-      mysql:
-        condition: service_healthy
     ports:
       - '${PORT:-4000}:${PORT:-4000}'
     networks:
@@ -57,9 +33,6 @@ services:
     networks:
       - btldevops_net
     restart: unless-stopped
-
-volumes:
-  mysql_data:
 
 networks:
   btldevops_net:
