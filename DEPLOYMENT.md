@@ -35,7 +35,7 @@
    **Backend:**
    ```
    PORT=4000
-   CORS_ORIGIN=https://your-frontend-url.railway.app
+   CORS_ORIGINS=https://your-frontend-url.railway.app
    DB_HOST=mysql
    DB_PORT=3306
    DB_USER=housecleaner

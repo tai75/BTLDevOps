@@ -21,13 +21,22 @@ function readNumber(value: string | undefined, fallback: number): number {
   return Number.isFinite(parsed) ? parsed : fallback
 }
 
-function readCorsOrigin(): string {
-  return readString(process.env.CORS_ORIGIN, process.env.CORS_ORIGINS) ?? 'http://localhost:5173'
+function readCorsOrigins(): string[] {
+  const rawOrigins = readString(process.env.CORS_ORIGIN, process.env.CORS_ORIGINS)
+
+  if (!rawOrigins) {
+    return ['http://localhost:5173']
+  }
+
+  return rawOrigins
+    .split(',')
+    .map((origin) => origin.trim())
+    .filter((origin, index, origins) => origin.length > 0 && origins.indexOf(origin) === index)
 }
 
 export const env = {
   port: readNumber(readString(process.env.PORT, process.env.API_PORT), 4000),
-  corsOrigin: readCorsOrigin(),
+  corsOrigins: readCorsOrigins(),
   db: {
     host: process.env.DB_HOST ?? 'localhost',
     port: readNumber(process.env.DB_PORT, 5432),
