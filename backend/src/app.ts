@@ -14,7 +14,18 @@ export function createApp(dependencies: AppDependencies = {}) {
   const app = express()
   const checkConnection = dependencies.checkDatabaseConnection ?? checkDatabaseConnection
 
-  app.use(cors({ origin: env.corsOrigin }))
+  app.use(
+    cors({
+      origin(requestOrigin, callback) {
+        if (!requestOrigin || env.corsOrigins.includes(requestOrigin)) {
+          callback(null, true)
+          return
+        }
+
+        callback(new Error(`CORS blocked for origin: ${requestOrigin}`))
+      },
+    }),
+  )
   app.use(express.json())
 
   app.get('/', (_request, response) => {

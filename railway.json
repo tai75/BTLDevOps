@@ -2,19 +2,11 @@
   "services": [
     {
       "name": "backend",
-      "source": "./backend",
-      "builder": "dockerfile"
+      "source": "./backend"
     },
     {
       "name": "frontend", 
-      "source": "./frontend",
-      "builder": "dockerfile"
-    }
-  ],
-  "databases": [
-    {
-      "name": "mysql",
-      "service": "mysql"
+      "source": "./frontend"
     }
   ]
 }

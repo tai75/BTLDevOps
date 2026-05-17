@@ -8,9 +8,13 @@
     "build": "npm --prefix frontend run build && npm --prefix backend run build",
     "build:frontend": "npm --prefix frontend run build",
     "build:backend": "npm --prefix backend run build",
+    "start": "npm run build && node backend/dist/server.js",
+    "postinstall": "npm --prefix frontend ci && npm --prefix backend ci",
     "lint:frontend": "npm --prefix frontend run lint",
     "lint:backend": "npm --prefix backend run lint",
     "test:backend": "npm --prefix backend run test"
   },
-  "devDependencies": {}
+  "dependencies": {
+    "pg": "^8.20.0"
+  }
 }

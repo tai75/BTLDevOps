@@ -1,8 +1,50 @@
 export default function Contact() {
   return (
-    <section>
-      <h2>Liên hệ</h2>
-      <p>Gọi: 0123-456-789 hoặc email: contact@example.com</p>
+    <section className="contact-grid">
+      <div className="page-card">
+        <p className="eyebrow">Liên hệ</p>
+        <h2>Văn phòng hỗ trợ khách hàng BTL Clean</h2>
+        <div className="contact-list">
+          <div className="contact-item">
+            <strong>Điện thoại</strong>
+            <span>0123-456-789</span>
+          </div>
+          <div className="contact-item">
+            <strong>Email</strong>
+            <span>contact@example.com</span>
+          </div>
+          <div className="contact-item">
+            <strong>Giờ làm việc</strong>
+            <span>08:00 - 18:00, Thứ 2 đến Thứ 7</span>
+          </div>
+          <div className="contact-item">
+            <strong>Địa chỉ</strong>
+            <span>456 Lê Lợi, Quận Hải Châu, Đà Nẵng</span>
+          </div>
+        </div>
+      </div>
+
+      <div className="contact-stack">
+        <div className="page-card">
+          <p className="eyebrow">Gửi lời nhắn nhanh</p>
+          <h2>Nhận phản hồi trong thời gian sớm nhất</h2>
+          <form className="quick-message-form">
+            <label>
+              Họ tên
+              <input type="text" name="name" placeholder="Nhập họ tên của bạn" />
+            </label>
+            <label>
+              Email
+              <input type="email" name="email" placeholder="Nhập email liên hệ" />
+            </label>
+            <label>
+              Nội dung tin nhắn
+              <textarea name="message" rows={5} placeholder="Bạn cần tư vấn dịch vụ nào?" />
+            </label>
+            <button type="button">Gửi lời nhắn</button>
+          </form>
+        </div>
+      </div>
     </section>
   )
 }
