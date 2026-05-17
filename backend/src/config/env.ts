@@ -2,6 +2,16 @@ import dotenv from 'dotenv'
 
 dotenv.config()
 
+function readString(...values: Array<string | undefined>): string | undefined {
+  for (const value of values) {
+    if (value && value.trim()) {
+      return value.trim()
+    }
+  }
+
+  return undefined
+}
+
 function readNumber(value: string | undefined, fallback: number): number {
   if (!value) {
     return fallback
@@ -11,14 +21,27 @@ function readNumber(value: string | undefined, fallback: number): number {
   return Number.isFinite(parsed) ? parsed : fallback
 }
 
+function readCorsOrigins(): string[] {
+  const rawOrigins = readString(process.env.CORS_ORIGIN, process.env.CORS_ORIGINS)
+
+  if (!rawOrigins) {
+    return ['http://localhost:5173']
+  }
+
+  return rawOrigins
+    .split(',')
+    .map((origin) => origin.trim())
+    .filter((origin, index, origins) => origin.length > 0 && origins.indexOf(origin) === index)
+}
+
 export const env = {
-  port: readNumber(process.env.PORT, 4000),
-  corsOrigin: process.env.CORS_ORIGIN ?? 'http://localhost:5173',
+  port: readNumber(readString(process.env.PORT, process.env.API_PORT), 4000),
+  corsOrigins: readCorsOrigins(),
   db: {
     host: process.env.DB_HOST ?? 'localhost',
-    port: readNumber(process.env.DB_PORT, 3306),
-    user: process.env.DB_USER ?? 'root',
-    password: process.env.DB_PASSWORD ?? '',
+    port: readNumber(process.env.DB_PORT, 5432),
+    user: process.env.DB_USER ?? 'postgres',
+    password: process.env.DB_PASSWORD ?? 'postgres',
     database: process.env.DB_NAME ?? 'house_cleaning_booking',
   },
 }

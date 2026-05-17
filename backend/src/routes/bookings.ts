@@ -1,12 +1,11 @@
 import { Router } from 'express'
-import type { ResultSetHeader, RowDataPacket } from 'mysql2/promise'
 import { pool } from '../db.js'
 
 export const bookingsRouter = Router()
 
 bookingsRouter.get('/', async (_request, response, next) => {
   try {
-    const [rows] = await pool.query(
+    const result = await pool.query(
       `SELECT
         b.id,
         b.service_address,
@@ -27,7 +26,7 @@ bookingsRouter.get('/', async (_request, response, next) => {
       ORDER BY b.created_at DESC`,
     )
 
-    response.json({ data: rows })
+    response.json({ data: result.rows })
   } catch (error) {
     next(error)
   }
@@ -61,45 +60,45 @@ bookingsRouter.post('/', async (request, response, next) => {
     return
   }
 
-  const connection = await pool.getConnection()
+  const client = await pool.connect()
 
   try {
-    await connection.beginTransaction()
+    await client.query('BEGIN')
 
-    await connection.query(
+    await client.query(
       `INSERT INTO customers (full_name, phone, email)
-       VALUES (?, ?, ?)
-       ON DUPLICATE KEY UPDATE
-         full_name = VALUES(full_name),
-         email = VALUES(email),
+       VALUES ($1, $2, $3)
+       ON CONFLICT (phone) DO UPDATE SET
+         full_name = $1,
+         email = $3,
          updated_at = CURRENT_TIMESTAMP`,
       [fullName, phone, email ?? null],
     )
 
-    const [customerRows] = await connection.query<RowDataPacket[]>(
-      'SELECT id FROM customers WHERE phone = ? LIMIT 1',
+    const customerResult = await client.query(
+      'SELECT id FROM customers WHERE phone = $1 LIMIT 1',
       [phone],
     )
 
-    const customerId = (customerRows[0] as RowDataPacket & { id?: number } | undefined)?.id
+    const customerId = customerResult.rows[0]?.id
     if (!customerId) {
       throw new Error('Unable to resolve customer after insert.')
     }
 
-    const [serviceRows] = await connection.query<RowDataPacket[]>(
-      'SELECT base_price FROM service_packages WHERE id = ? AND is_active = 1 LIMIT 1',
+    const serviceResult = await client.query(
+      'SELECT base_price FROM service_packages WHERE id = $1 AND is_active = 1 LIMIT 1',
       [servicePackageId],
     )
 
-    if (serviceRows.length === 0) {
+    if (serviceResult.rows.length === 0) {
       response.status(400).json({ message: 'Service package not found.' })
-      await connection.rollback()
+      await client.query('ROLLBACK')
       return
     }
 
-    const totalPrice = Number((serviceRows[0] as RowDataPacket & { base_price?: string }).base_price)
+    const totalPrice = Number(serviceResult.rows[0].base_price)
 
-    const [bookingResult] = await connection.query<ResultSetHeader>(
+    const bookingResult = await client.query(
       `INSERT INTO bookings (
         customer_id,
         service_package_id,
@@ -110,8 +109,8 @@ bookingsRouter.post('/', async (request, response, next) => {
         notes,
         status,
         total_price
-      ) VALUES (?, ?, ?, ?, ?, ?, ?, 'pending', ?)`
-      ,
+      ) VALUES ($1, $2, $3, $4, $5, $6, $7, 'pending', $8)
+      RETURNING *`,
       [
         customerId,
         servicePackageId,
@@ -124,16 +123,16 @@ bookingsRouter.post('/', async (request, response, next) => {
       ],
     )
 
-    await connection.commit()
+    await client.query('COMMIT')
 
     response.status(201).json({
       message: 'Booking created successfully.',
-      data: bookingResult,
+      data: bookingResult.rows[0],
     })
   } catch (error) {
-    await connection.rollback()
+    await client.query('ROLLBACK')
     next(error)
   } finally {
-    connection.release()
+    client.release()
   }
 })
