@@ -25,8 +25,8 @@ A full-stack DevOps project demonstrating a complete software system deployment 
 
 ### Key DevOps Features
 ✅ **CI/CD Pipeline** - GitHub Actions workflow for automated testing & building  
-✅ **Containerization** - Docker containers for all services (Frontend, Backend, MySQL)  
-✅ **Database** - MySQL with pre-configured schema  
+✅ **Containerization** - Docker containers for all services (Frontend, Backend, PostgreSQL)  
+✅ **Database** - PostgreSQL with pre-configured schema  
 ✅ **Full-Stack** - React frontend + Node.js/Express backend  
 ✅ **Production-Ready** - Environment-based configuration, error handling, health checks
 
@@ -38,13 +38,13 @@ A full-stack DevOps project demonstrating a complete software system deployment 
 ├─────────────────────────────────────────────────────────────┤
 │                                                               │
 │  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐      │
-│  │  Frontend    │  │   Backend    │  │    MySQL     │      │
+│  │  Frontend    │  │   Backend    │  │ PostgreSQL   │      │
 │  │ (React/Nginx)│  │(Node/Express)│  │  (Database)  │      │
 │  │  :5173 (dev) │  │   :4000      │  │   :3306      │      │
 │  │  :80 (prod)  │  │              │  │              │      │
 │  └──────────────┘  └──────────────┘  └──────────────┘      │
 │       ↓                ↓                    ↓                │
-│    VITE_API_URL   CORS_ORIGIN         DB_VARS              │
+│    VITE_API_URL   CORS_ORIGINS        DB_VARS              │
 │                                                               │
 └─────────────────────────────────────────────────────────────┘
 ```
@@ -70,7 +70,7 @@ BTLDevOps/
 │   │   │   ├── health.ts       # GET /api/health
 │   │   │   ├── services.ts     # GET /api/services
 │   │   │   └── bookings.ts     # GET/POST /api/bookings
-│   │   ├── db.ts               # MySQL connection pool
+│   │   ├── db.ts               # PostgreSQL connection pool
 │   │   ├── config/env.ts       # Environment configuration
 │   │   ├── app.ts              # Express app setup
 │   │   └── server.ts           # Server entry point
@@ -85,7 +85,7 @@ BTLDevOps/
 │
 ├── docker-compose.yml          # Local development stack
 ├── docker-compose.prod.yml     # Production stack
-├── mysql-schema.sql            # Database schema + seed data
+├── postgres-schema.sql         # Database schema + seed data
 ├── .env.example                # Environment variables template
 ├── DEPLOYMENT.md               # Detailed deployment guide
 └── README.md                   # This file
@@ -115,7 +115,7 @@ BTLDevOps/
 3. **Access the application**
    - Frontend: http://localhost:5173
    - Backend API: http://localhost:4000
-   - MySQL: localhost:3306
+   - PostgreSQL: localhost:5432
 
 4. **Check service health**
    ```bash

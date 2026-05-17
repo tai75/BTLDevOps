@@ -19,26 +19,25 @@
 
 2. **Configure Services**
    - Railway detects `docker-compose.yml` automatically
-   - Services created: `mysql`, `backend`, `frontend`
+   - Services created: `postgres`, `backend`, `frontend`
 
 3. **Set Environment Variables**
    - For each service, set the required env vars:
    
-   **MySQL:**
+   **PostgreSQL:**
    ```
-   MYSQL_ROOT_PASSWORD=<strong-password>
-   MYSQL_DATABASE=house_cleaning_booking
-   MYSQL_USER=housecleaner
-   MYSQL_PASSWORD=<strong-password>
+   POSTGRES_DB=house_cleaning_booking
+   POSTGRES_USER=postgres
+   POSTGRES_PASSWORD=<strong-password>
    ```
    
    **Backend:**
    ```
    PORT=4000
    CORS_ORIGINS=https://your-frontend-url.railway.app
-   DB_HOST=mysql
-   DB_PORT=3306
-   DB_USER=housecleaner
+   DB_HOST=postgres
+   DB_PORT=5432
+   DB_USER=postgres
    DB_PASSWORD=<same-as-above>
    DB_NAME=house_cleaning_booking
    NODE_ENV=production
@@ -68,7 +67,7 @@ railway link
 
 # Set environment variables
 railway variables set DB_PASSWORD=your-password
-railway variables set CORS_ORIGIN=https://your-domain
+railway variables set CORS_ORIGINS=https://your-domain
 # ... set all vars
 
 # Deploy
@@ -117,13 +116,13 @@ curl https://your-frontend-url
 
 ## Troubleshooting
 
-### MySQL Connection Failed
+### PostgreSQL Connection Failed
 - Check `DB_HOST`, `DB_USER`, `DB_PASSWORD` match between services
-- Verify MySQL service is healthy: `docker-compose logs mysql`
+- Verify PostgreSQL service is healthy: `docker-compose logs postgres`
 
 ### Frontend Cannot Reach Backend
 - Verify `VITE_API_URL` in frontend env vars
-- Check CORS settings in backend (`CORS_ORIGIN`)
+- Check CORS settings in backend (`CORS_ORIGINS`)
 - Ensure backend service is running
 
 ### Deploy Fails
