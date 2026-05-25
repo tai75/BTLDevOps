@@ -80,11 +80,14 @@ Test-Endpoint "GET /api/bookings" "GET" "/api/bookings"
 Write-Host "📋 4. CREATE BOOKING" -ForegroundColor Cyan
 Write-Host "===================" -ForegroundColor Cyan
 $bookingData = @{
-    customerName = "Test Customer"
-    customerEmail = "test@example.com"
-    customerPhone = "555-0123"
-    serviceId = 1
-    bookingDate = "2026-05-15"
+    fullName = "Test Customer"
+    email = "test@example.com"
+    phone = "555-0123"
+    servicePackageId = 1
+    serviceAddress = "123 Demo Street"
+    preferredDate = "2026-05-15"
+    preferredTime = "09:00"
+    numberOfRooms = 2
     notes = "Test booking"
 } | ConvertTo-Json
 
